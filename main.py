@@ -4,7 +4,7 @@ import random
 import os
 
 # Создаем папку где будут храниться готовые карточки
-output_dir = 'E:/Pythonlearning/Lesson_5._Creating_Humans/output/svg'
+output_dir = 'output/svg'
 os.makedirs(output_dir, exist_ok=True)
 
 # Открываем файл со скилами
@@ -87,5 +87,5 @@ if __name__ == '__main__':
 
         # Путь откуда берется шаблон и куда сохраняется готовые карточки
         file_operations.render_template(
-            "E:/Pythonlearning/Lesson_5._Creating_Humans/src/charsheet.svg",
-            "E:/Pythonlearning/Lesson_5._Creating_Humans/output/svg/output-{}.svg".format(i), context)
+            "src/charsheet.svg",
+            "output/svg/output-{}.svg".format(i), context)
