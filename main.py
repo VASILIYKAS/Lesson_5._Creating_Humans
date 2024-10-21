@@ -141,21 +141,21 @@ def cards(skill1, skill2, skill3):
 
 
 # Путь откуда берется шаблон и куда сохраняется готовые карточки
-def template(context, count):
+def template(context, i):
     file_operations.render_template(
         "src/charsheet.svg",
-        "output/svg/output-{}.svg".format(count), context)
+        "output/svg/output-{}.svg".format(i), context)
 
 
-def main(count):
+def main():
     skills = open_skills()
     runic_skills = new_skills(skills)
-    skill1, skill2, skill3 = random_skills(runic_skills)
-    context = cards(skill1, skill2, skill3)
-    otput()
-    template(context, count)
+    for i in range(1, 11):
+        skill1, skill2, skill3 = random_skills(runic_skills)
+        context = cards(skill1, skill2, skill3)
+        otput()
+        template(context, i)
 
 
 if __name__ == '__main__':
-    for i in range(1, 11):
-        main(i)
+    main()
